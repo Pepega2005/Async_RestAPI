@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RestAPI_Comics"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnPrev" Width="150" Height="50" Content="Previous"
+                    Click="btnPrev_Click" Margin="10"/>
+
+            <Button Name="btnRandom" Width="150" Height="50" Content="Random"
+                    Click="btnRandom_Click" Margin="10"/>
+
+            <Button Name="btnNext" Width="150" Height="50" Content="Next"
+                    Click="btnNext_Click" Margin="10"/>
+        </StackPanel>
         
+        <Label Name="Info" Grid.Row="1" Content="Info" Margin="10" HorizontalAlignment="Center"/>
+
+        <Image Name="imageComic" Grid.Row="2" Margin="10"/>
     </Grid>
 </Window>
